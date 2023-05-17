@@ -1,0 +1,24 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: tf-helloworld
+  namespace: flux-system
+spec:
+  interval: 30s
+  url: https://github.com/protomonk/tf-helloworld
+  ref:
+    branch: main
+---
+apiVersion: infra.contrib.fluxcd.io/v1alpha2
+kind: Terraform
+metadata:
+  name: tf-helloworld
+  namespace: flux-system
+spec:
+  path: ./
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: tf-helloworld
+    namespace: flux-system
