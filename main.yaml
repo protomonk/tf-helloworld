@@ -16,6 +16,7 @@ metadata:
   name: tf-helloworld
   namespace: flux-system
 spec:
+  approvePlan: auto
   path: ./
   interval: 1m
   sourceRef:
