@@ -22,3 +22,5 @@ spec:
     kind: GitRepository
     name: tf-helloworld
     namespace: flux-system
+  writeOutputsToSecret:
+    name: tf-helloworld-output
